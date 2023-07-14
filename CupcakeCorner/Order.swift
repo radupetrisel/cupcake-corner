@@ -30,7 +30,10 @@ class Order: ObservableObject, Codable {
     @Published var zip = ""
     
     var isAddressValid: Bool {
-        !name.isEmpty && !streetAddress.isEmpty && !city.isEmpty && !zip.isEmpty
+        name.isNotWhitespace
+        && streetAddress.isNotWhitespace
+        && city.isNotWhitespace
+        && zip.isNotWhitespace
     }
     
     var cost: Double {
