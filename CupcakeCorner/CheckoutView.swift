@@ -13,6 +13,8 @@ struct CheckoutView: View {
     @State private var confirmationMessage = ""
     @State private var isShowingConfirmation = false
     
+    @State private var isShowingError = false
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -43,6 +45,10 @@ struct CheckoutView: View {
         } message: {
             Text(confirmationMessage)
         }
+        .alert("Error placing order", isPresented: $isShowingError) {
+            Button("Ok") { }
+        }
+
 
     }
     
@@ -64,7 +70,7 @@ struct CheckoutView: View {
             confirmationMessage = "Your order for \(decodedOrder.quantity)x \(Order.types[decodedOrder.type].lowercased()) cupcakes is now on its way!"
             isShowingConfirmation = true
         } catch {
-            print("Checkout failed.")
+            isShowingError = true
         }
     }
 }
