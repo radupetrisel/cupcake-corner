@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-class Order: ObservableObject, Codable {
+struct Order: Codable {
     static let types = ["Vanilla", "Strawberry", "Chocolate", "Rainbow"]
     
-    @Published var type = 0
-    @Published var quantity = 3
+    var type = 0
+    var quantity = 3
     
-    @Published var specialRequestEnabled = false {
+    var specialRequestEnabled = false {
         didSet {
             if !specialRequestEnabled {
                 extraFrosting = false
@@ -21,13 +21,13 @@ class Order: ObservableObject, Codable {
             }
         }
     }
-    @Published var extraFrosting = false
-    @Published var addSprinkles = false
+    var extraFrosting = false
+    var addSprinkles = false
     
-    @Published var name = ""
-    @Published var streetAddress = ""
-    @Published var city = ""
-    @Published var zip = ""
+    var name = ""
+    var streetAddress = ""
+    var city = ""
+    var zip = ""
     
     var isAddressValid: Bool {
         name.isNotWhitespace
@@ -54,48 +54,5 @@ class Order: ObservableObject, Codable {
         }
         
         return cost
-    }
-    
-    init() { }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        self.type = try container.decode(Int.self, forKey: .type)
-        self.quantity = try container.decode(Int.self, forKey: .quantity)
-        
-        self.extraFrosting = try container.decode(Bool.self, forKey: .extraFrosting)
-        self.addSprinkles = try container.decode(Bool.self, forKey: .addSprinkles)
-        
-        self.name = try container.decode(String.self, forKey: .name)
-        self.streetAddress = try container.decode(String.self, forKey: .streetAddress)
-        self.city = try container.decode(String.self, forKey: .city)
-        self.zip = try container.decode(String.self, forKey: .zip)
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        
-        try container.encode(type, forKey: .type)
-        try container.encode(quantity, forKey: .quantity)
-        
-        try container.encode(extraFrosting, forKey: .extraFrosting)
-        try container.encode(addSprinkles, forKey: .addSprinkles)
-        
-        try container.encode(name, forKey: .name)
-        try container.encode(streetAddress, forKey: .streetAddress)
-        try container.encode(city, forKey: .city)
-        try container.encode(zip, forKey: .zip )
-    }
-    
-    enum CodingKeys: CodingKey {
-        case type
-        case quantity
-        case extraFrosting
-        case addSprinkles
-        case name
-        case streetAddress
-        case city
-        case zip
     }
 }

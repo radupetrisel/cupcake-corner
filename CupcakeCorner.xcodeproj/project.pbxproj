@@ -16,6 +16,7 @@
 		7C85D5972A6131DA00BC9886 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C85D5962A6131DA00BC9886 /* AddressView.swift */; };
 		7C85D5992A6133B200BC9886 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C85D5982A6133B200BC9886 /* CheckoutView.swift */; };
 		7C85D59B2A616B2B00BC9886 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C85D59A2A616B2B00BC9886 /* StringExtensions.swift */; };
+		7C85D59D2A616CDD00BC9886 /* OrderWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C85D59C2A616CDD00BC9886 /* OrderWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		7C85D5962A6131DA00BC9886 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		7C85D5982A6133B200BC9886 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		7C85D59A2A616B2B00BC9886 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		7C85D59C2A616CDD00BC9886 /* OrderWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				7C85D5962A6131DA00BC9886 /* AddressView.swift */,
 				7C85D5982A6133B200BC9886 /* CheckoutView.swift */,
 				7C85D5942A612C1A00BC9886 /* Order.swift */,
+				7C85D59C2A616CDD00BC9886 /* OrderWrapper.swift */,
 				7C85D59A2A616B2B00BC9886 /* StringExtensions.swift */,
 				7C85D5882A6110B300BC9886 /* Assets.xcassets */,
 				7C85D58A2A6110B300BC9886 /* Preview Content */,
@@ -158,6 +161,7 @@
 				7C85D5972A6131DA00BC9886 /* AddressView.swift in Sources */,
 				7C85D5992A6133B200BC9886 /* CheckoutView.swift in Sources */,
 				7C85D5872A6110B300BC9886 /* ContentView.swift in Sources */,
+				7C85D59D2A616CDD00BC9886 /* OrderWrapper.swift in Sources */,
 				7C85D5852A6110B300BC9886 /* CupcakeCornerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
